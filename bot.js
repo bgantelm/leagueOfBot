@@ -47,7 +47,7 @@ client.on("message", (message) => {
         .then((reply) => { message.reply(reply) } )
         .catch((reply) => { message.reply(reply) })
         return
-      } else { message.reply('I cannot help you on this point') }
+      } else { message.reply('I cannot help you on this point :disappointed_relieved: ') }
     }
   })
 }
