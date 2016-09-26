@@ -1,19 +1,19 @@
-const restify = require('restify')
-const config = require('./config.js')
-const recast = require('recastai')
-const Discord = require('discord.js');
+import restify from 'restify'
+import config from './config.js'
+import recast from 'recastai'
+import Discord from 'discord.js'
 const client = new Discord.Client();
 
 // IMPORTintents
 
-const getGreetings = require('./modules/greetings.js')
-const getGoodbyes = require('./modules/goodbyes.js')
-const getWhoHaveWin = require('./modules/whohavewin.js')
-const getNextmatch = require('./modules/nextMatch.js')
-const getInfoTeam = require('./modules/information.js')
-const getInsult = require('./modules/insult.js')
-const getListTeam = require('./modules/listTeam.js')
-const getHelp = require('./modules/help.js')
+import getGreetings from './modules/greetings.js'
+import getGoodbyes from './modules/goodbyes.js'
+import getWhoHaveWin from './modules/whohavewin.js'
+import getNextmatch from './modules/nextMatch.js'
+import getInfoTeam from './modules/information.js'
+import getInsult from './modules/insult.js'
+import getListTeam from './modules/listTeam.js'
+import getHelp from './modules/help.js'
 
 
 // functions intents

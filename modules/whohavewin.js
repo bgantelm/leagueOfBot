@@ -1,9 +1,9 @@
-const request = require('request-promise')
-const config = require('../config.js')
-const getName = require('../utils.js')
-const Teams = require('../teamjson.js')
+import request from 'request-promise'
+import config from '../config.js'
+import getName from '../utils.js'
+import Teams from '../teamjson.js'
 
-function getWhoHaveWin(recast) {
+const getWhoHaveWin = (recast) => {
   console.log('lool');
   console.log(recast.sentences[0]);
   const team = recast.all('team')
@@ -25,14 +25,13 @@ function getWhoHaveWin(recast) {
     for(var i = 0; i < 6; i++) {
       j = 0
       for (var j = 0; j < 6; j++)
-      // console.log(Teams[team[1]][j]);
         if (Teams[team[0]][i] == Teams[team[1]][j]) {
           matchId[count] = Teams[team[1]][j]
           count++
         }
     }
      console.log(matchId);
-    request.get('http://api.lolesports.com/api/v1/leagues?slug=worlds', function(error, response, res) {
+    request.get('http://api.lolesports.com/api/v1/leagues?slug=worlds', (error, response, res) => {
       var score = JSON.parse(res).highlanderTournaments[1].brackets[getBracket(team[0])].matches[matchId[0]].scores[team[0]]
       var score2 = JSON.parse(res).highlanderTournaments[1].brackets[getBracket(team[0])].matches[matchId[1]].scores[team[0]]
 
@@ -50,7 +49,7 @@ function getWhoHaveWin(recast) {
 }
 
 
-function getBracket(name) {
+const getBracket = (name) => {
   if (name == 'TSM' || name == 'Splyce' || name == 'Royal Never Give Up' || name == 'Samsung Galaxy') {
     return ("4e593494-40f1-42de-8ffd-982c93cfe083")
   } else if (name == 'H2K' || name == 'Edward Gaming' || name == 'ahq e-Sports Club' || name == 'INTZ e-Sports') {

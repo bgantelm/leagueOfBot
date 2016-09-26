@@ -1,4 +1,4 @@
-function replyInsult() {
+const replyInsult = () => {
   const answers = [
     'Why are you sad',
     'Bitch please',

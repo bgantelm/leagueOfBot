@@ -25,7 +25,7 @@ function getName(slug) {
    return ("Edward Gaming")
  } else if (slug == 'INTZ' || slug == 'ITZ' || slug == 'INTZ e-sports' || slug == 'INTZ eSports' || slug == 'itz' || slug == 'Itz' || slug == 'Intz' || slug == 'intz e-sports') {
    return ("INTZ e-Sports")
- } else if (slug == 'RNG' || slug == 'rng' || slug == 'royal never give up' || slug == 'Rng' || slug == 'RoyalNeverGiveUp') {
+ } else if (slug == 'RNG' || slug == 'rng' || slug == 'royal never give up' || slug == 'Rng' || slug == 'RoyalNeverGiveUp' || slug == 'Royal Never Give Up') {
    return ("Royal Never Give Up")
  } else if (slug == 'Splyce' || slug == 'SPY' || slug == 'spy' || slug == 'splyce' || slug == 'SPLY' || slug == 'SPLYCE') {
    return ("Splyce")

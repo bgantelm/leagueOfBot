@@ -1,4 +1,4 @@
-function replyGoodbyes() {
+const replyGoodbyes = () => {
   const answers = [
     'Bye!',
     'That\'s great to talk with you!',

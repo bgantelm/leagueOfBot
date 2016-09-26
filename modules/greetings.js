@@ -1,4 +1,4 @@
-function replyGreetings() {
+const replyGreetings = () => {
   const answers = [
     'Hello',
     'Heyy!',

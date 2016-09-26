@@ -1,9 +1,9 @@
-const request = require('request-promise')
-const config = require('../config.js')
-const getName = require('../utils.js')
-const Teams = require('../teamjson.js')
+import request from 'request-promise'
+import config from '../config.js'
+import getName from '../utils.js'
+import Teams from '../teamjson.js'
 
-function getNextmatch(recast) {
+const getNextmatch = (recast) => {
   const teamObject = recast.all('team')
   const team = teamObject
   const promises = []
@@ -22,7 +22,7 @@ console.log(team);
       promises.push(getPromise(Teams[teame], i, teame))
     }
     Promise.all(promises)
-    .then(function(res) {
+    .then((res) => {
       for(var i = 0; i < 6; i++) {
         if (i == 0) {
           var save = res[i]
@@ -33,17 +33,17 @@ console.log(team);
       }
       resolv ('\n' + save.name1 + ' Vs ' + save.name2 + '\nat ' + save.date)
     })
-    .catch(function() {
+    .catch(() => {
       console.log('error');
     })
   })
 }
 
-function getPromise(teams, i, team) {
+const getPromise = (teams, i, team) => {
   return new Promise((resolve, reject) => {
     var tournament = '3c5fa267-237e-4b16-8e86-20378a47bf1c'
     var url = `http://api.lolesports.com/api/v2/highlanderMatchDetails?tournamentId=${tournament}&matchId=${teams[i]}`
-    request.get(url, function (error, response, res) {
+    request.get(url, (error, response, res) => {
       if (!error && response.statusCode == 200) {
         var mdr3 = JSON.parse(res).scheduleItems[0].scheduledTime
         var mdr = JSON.parse(res).teams[0].name
