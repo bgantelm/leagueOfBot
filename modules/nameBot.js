@@ -1,7 +1,7 @@
 const replyName = () => {
   return new Promise((resolve, reject) => {
     console.log(reject)
-    resolve('Sorry dude, I am not a human, I have no name, no feels...')
+    resolve('Sorry man, I\'m not a human, I don\'t have a name, or any feels...')
   })
 }
 

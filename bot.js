@@ -50,7 +50,7 @@ if (message.content == '!lolbot' || i == 1) {
   i = 1
   if (message.author.username !== 'testBot') {
     if (message.content == '!lolbot') {
-      message.reply('\nHello,\nThanks to add me on your channel, I am a League of Legend bot, in beta for this World Championship 2016, but i hope you will train me for my real version for back to LCS with lot of options!\nI hope we will be a nice conversations, and if you are dont knowing what can i make, dont hesitate to ask some help, it is always a pleasure for me to help you :)\nIf you want i leave the channel after, you just need to make !lolbot!\n and again !lolbot and i will come back :wink:')
+      message.reply('\nHello,\nThanks for adding me on your channel! I\'m a League of Legend bot, your guide through the World Championships and LCSs. You can ask for the upcoming matches, the teams bio and the match results\'. I\'m currently in beta, so stay tuned for further improvement!\nTo call me on a channel, type !lolbot and to make me leave type !lolbot!\nIf you\'re confused, don\'t worry, you can always ask for help! So go on, ask me "when is the next match"! :wink: \n ')
     } else if (message.content == '!lolbot!') {
       i = 0
     } else {
@@ -63,7 +63,7 @@ if (message.content == '!lolbot' || i == 1) {
           .then((reply) => { message.reply(reply) } )
           .catch((reply) => { message.reply(reply) })
           return
-        } else { message.reply('I cannot help you on this point :disappointed_relieved: ') }
+        } else { message.reply('I don\'t know how to help you on this :disappointed_relieved: ') }
       }
     })
   }

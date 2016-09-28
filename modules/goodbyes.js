@@ -1,7 +1,7 @@
 const replyGoodbyes = () => {
   const answers = [
     'Bye!',
-    'That\'s great to talk with you!',
+    'Great to talk with you!',
     'Have a great day!',
     'See you soon',
   ]

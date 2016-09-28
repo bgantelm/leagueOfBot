@@ -1,7 +1,7 @@
 const replyThanks = () => {
   const answers = [
     'It is always a pleasure to help you :blush:',
-    'If I can do something else for you dont hesitate :)',
+    'If I can do something else for you, let me know :)',
     'My pleasure',
   ]
 

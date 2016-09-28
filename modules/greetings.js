@@ -2,7 +2,7 @@ const replyGreetings = () => {
   const answers = [
     'Hello',
     'Heyy!',
-    'Welcome there!',
+    'Welcome!',
   ]
 
   return new Promise((resolve, reject) => {

@@ -14,10 +14,10 @@ const getNextmatch = (recast) => {
       })
     } else {
       if (!teamObject[0].raw) {
-        return rejec('Sorry, I have not understand about what team you need information')
+        return rejec('Sorry, I don\'t understand which team you\'re asking about.')
       }
       const teamName = getName(teamObject[0].raw)
-      if (!teamName) { return rejec ('Need a valid team for purchase')}
+      if (!teamName) { return rejec ('Sorry, I need a valid team to continue')}
 
       Teams[teamName].forEach((team) => promises.push(getPromise(team, teamName)))
       Promise.all(promises)

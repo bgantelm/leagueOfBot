@@ -5,7 +5,7 @@ import Teams from '../teamjson.js'
 const getWhoHaveWin = (recast) => {
   console.log(recast.sentences[0]);
   const team = recast.all('team')
-  if (!team[0] || !team[1] || !team[0].raw || !team[1].raw) { return new Promise((resolve, reject) => { reject ('Sorry, I have not understand about what team you need information') }) }
+  if (!team[0] || !team[1] || !team[0].raw || !team[1].raw) { return new Promise((resolve, reject) => { reject ('Sorry, I don\'t understand which team you\'re asking about') }) }
 
   return new Promise((resolve, reject) => {
     team[0] = getName(team[0].raw)
@@ -13,7 +13,7 @@ const getWhoHaveWin = (recast) => {
 
     if (!team[0] || !team[1]) { return reject ('Need a valid team for purchase')}
     if (getBracket(team[0]) != getBracket(team[1])) {
-      return reject ('No match between this team are available, sorry dude, they are not in the same bracket')
+      return reject ('There is no match planned between those team, sorry dude, they\'re not in the same bracket')
     }
     var count = 0
     var matchId = []
@@ -31,7 +31,7 @@ const getWhoHaveWin = (recast) => {
       var score2 = JSON.parse(res).highlanderTournaments[1].brackets[getBracket(team[0])].matches[matchId[1]].scores[team[0]]
 
       if (!score && !score2) {
-        return reject ('Team are not fight for the moment, check the next match of your team with: When is playing YOUR_TEAM')
+        return reject ('Those teams didn\'t compete yet. If you want to check the next match, just ask "When is YOUR_TEAM playing?"')
       } else if (!score) {
         resolve (score2)
       } else if (!score2) {

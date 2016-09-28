@@ -2,11 +2,11 @@ const replyInsult = () => {
   const answers = [
     'Why are you sad',
     'Bitch please',
-    'Typical cancer !!',
+    'Typical cancer!!',
     'stfu noob',
-    'Calm down ...',
+    'Calm down...',
     'Are you serious dude?',
-    'I am a simple bot, but i have a heart...',
+    'I am a simple bot, but I have a heart...',
     ':poop:'
   ]
 
