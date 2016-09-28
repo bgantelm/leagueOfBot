@@ -3,7 +3,7 @@ function getName(slug) {
     return ("Counter Logic Gaming")
   } else if (slug == 'tsm' || slug == 'TSM' || slug == 'Tsm' || slug == 'Team Solo Mid' || slug == 'TEAM SOLO MID' || slug == 'TEAM SOLOMID' || slug == 'Team Solomid' || slug == 'teamsolomid') {
     return ("TSM")
-  } else if (slug == 'rox tigers' || slug == 'RoxTigers' || slug == 'ROX' || slug == 'rox' || slug == 'Rox' || slug == 'ROX TIGERS' || slug == 'Rox Tigers' || slug == 'roxtigers') {
+  } else if (slug == 'rox tigers' || slug == 'RoxTigers' || slug == 'ROX' || slug == 'rox' || slug == 'Rox' || slug == 'ROX TIGERS' || slug == 'Rox Tigers' || slug == 'roxtigers' || slug == 'ROX Tigers') {
    return ("ROX Tigers")
  } else if (slug == 'g2' || slug == 'G2' || slug == 'g2esports' || slug == 'G2 ESPORTS' || slug == 'G2 Esports' || slug == 'G2 esports' || slug == 'G2 Esports' || slug == 'G2Esports' || slug == 'G2esports' || slug == 'G2 Esport') {
    return ("G2 Esports")

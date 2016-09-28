@@ -1,5 +1,5 @@
 {
-  "name": "geobot",
+  "name": "leagueofbot",
   "version": "1.0.0",
   "main": "bot.js",
   "scripts": {
@@ -8,20 +8,19 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/bgantelm/Geobot.git"
+    "url": "git+https://github.com/bgantelm/leagueofbot.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/bgantelm/Geobot/issues"
+    "url": "https://github.com/bgantelm/leagueofbot/issues"
   },
-  "homepage": "https://github.com/bgantelm/Geobot#readme",
+  "homepage": "https://github.com/bgantelm/leagueofbot#readme",
   "description": "",
   "dependencies": {
-    "@slack/client": "^3.5.0",
     "babel-cli": "^6.14.0",
     "discord.js": "^9.2.0",
-    "events": "^1.1.1",
+    "lodash": "^4.16.2",
     "recastai": "^1.1.0",
     "request-promise": "^3.0.0",
     "restify": "^4.1.1"

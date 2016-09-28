@@ -1,18 +1,13 @@
 import request from 'request-promise'
-import config from '../config.js'
 import getName from '../utils.js'
 import Teams from '../teamjson.js'
 
 const getWhoHaveWin = (recast) => {
-  console.log('lool');
   console.log(recast.sentences[0]);
   const team = recast.all('team')
-  if (!team[0] || !team[1]) { return new Promise((resolve, reject) => { reject ('Sorry, I have not understand about what team you need information') }) }
+  if (!team[0] || !team[1] || !team[0].raw || !team[1].raw) { return new Promise((resolve, reject) => { reject ('Sorry, I have not understand about what team you need information') }) }
 
   return new Promise((resolve, reject) => {
-    if (!team[0].raw || !team[1].raw) {
-      rejec('Sorry, I have not understand about what team you need information')
-    }
     team[0] = getName(team[0].raw)
     team[1] = getName(team[1].raw)
 

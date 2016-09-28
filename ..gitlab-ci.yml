@@ -1,0 +1,10 @@
+stages:
+    - deploy
+
+deploy-prod:
+    stage: deploy
+    script:
+        - bundle install
+        - bundle exec cap production deploy
+    only:
+        - master
