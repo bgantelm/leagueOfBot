@@ -16,6 +16,9 @@ select your server discord where you want to add him, and authorize. It's as sim
 
 ## Usage
 
+For activate him, just use:  !lolbot
+And for desactivate, use: !lolbot!
+
 For use the bot, you just need to talk with him on your server discord, and if you dont know what say, just ask him some help.
 For any questions, dont hesitate to send me an email.
 Have fun !
