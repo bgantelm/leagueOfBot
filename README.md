@@ -10,9 +10,13 @@ This bot is a nodejs bot, interface to the [Recast.AI](https://recast.ai), With 
 
 ## Installation
 
-For install this bot, you just need to have (or create) a discord account, open a new tab, and put this url: https://discordapp.com/oauth2/authorize?client_id=227344545573109760&scope=bot&permissions=0
+For install this bot, you just need to have (or create) a discord account, open a new tab, and put this url: 
+https://discordapp.com/oauth2/authorize?client_id=231079807562022912&scope=bot&permissions=0
 
 select your server discord where you want to add him, and authorize. It's as simple as that !
+
+You can too test on our server, for this go on:
+https://discordapp.com/invite/42qn8dh
 
 ## Usage
 
