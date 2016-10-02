@@ -1,8 +1,8 @@
 # config valid only for current version of Capistrano
 lock '3.4.1'
 
-set :application, 'leagueOfBot'
-set :repo_url, 'git@github.com:bgantelm/leagueOfBot.git'
+set :application, 'LeagueOfBot'
+set :repo_url, 'ssh://git@git.recast.ai:2424/bots/LeagueOfBot.git'
 
 # Default deploy_to directory is /var/www/my_app_name
 set :deploy_to, "/home/bots/#{fetch :application}"

@@ -1,6 +1,7 @@
 import request from 'request-promise'
 import getName from '../utils.js'
 import Teams from '../teamjson.js'
+import Array from 'lodash'
 
 const getNextmatch = (recast) => {
   const teamObject = recast.all('team')
@@ -16,17 +17,19 @@ const getNextmatch = (recast) => {
       if (!teamObject[0].raw) {
         return rejec('Sorry, I don\'t understand which team you\'re asking about.')
       }
+
       const teamName = getName(teamObject[0].raw)
       if (!teamName) { return rejec ('Sorry, I need a valid team to continue')}
 
       Teams[teamName].forEach((team) => promises.push(getPromise(team, teamName)))
       Promise.all(promises)
       .then((res) => {
+        var now = new Date()
         for(var i = 0; i < 6; i++) {
           if (i == 0) {
             var save = res[i]
           }
-          if (res[i].date < save.date) {
+          if (res[i].date < save.date && new Date(res[i].date) > now) {
             save = res[i]
           }
         }
@@ -47,7 +50,9 @@ const getNextMatch = () => {
         var now = new Date()
         var j = 0
         for (var i = 0; date[i]; i++) {
-          if (date[i].scheduledTime.indexOf('2016') > -1 && date[i].tags.blockLabel !== 'Finals' && date[i].tags.blockLabel !== 'Quarterfinals' && date[i].tags.blockLabel !== 'Semifinals' && date[i].tags.subBlockLabel !== 'Rebroadcast' && date[i].tags.subBlockLabel !== 'PTL' && date[i].id !== 'AVcfjjkbQMQFcjhwbQmB') {
+          if (date[i].scheduledTime.indexOf('2016') > -1 && date[i].tags.blockLabel !== 'Finals' && date[i].tags.blockLabel !== 'Quarterfinals'
+          && date[i].tags.blockLabel !== 'Semifinals' && date[i].tags.subBlockLabel !== 'Rebroadcast' && date[i].tags.subBlockLabel !== 'PTL'
+          && date[i].id !== 'AVcfjjkbQMQFcjhwbQmB' && date[i].id !== 'AVd046XbQMQFcjhwbQm1') {
             if (j == 0) {
               var tmp = new Date(date[i].scheduledTime)
               var tmp2 = date[i].scheduledTime

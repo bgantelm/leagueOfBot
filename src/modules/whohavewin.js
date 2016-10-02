@@ -1,9 +1,9 @@
 import request from 'request-promise'
 import getName from '../utils.js'
+import getId from '../idTeam.js'
 import Teams from '../teamjson.js'
 
 const getWhoHaveWin = (recast) => {
-  console.log(recast.sentences[0]);
   const team = recast.all('team')
   if (!team[0] || !team[1] || !team[0].raw || !team[1].raw) { return new Promise((resolve, reject) => { reject ('Sorry, I don\'t understand which team you\'re asking about') }) }
 
@@ -27,17 +27,28 @@ const getWhoHaveWin = (recast) => {
     }
      console.log(matchId);
     request.get('http://api.lolesports.com/api/v1/leagues?slug=worlds', (error, response, res) => {
-      var score = JSON.parse(res).highlanderTournaments[1].brackets[getBracket(team[0])].matches[matchId[0]].scores[team[0]]
-      var score2 = JSON.parse(res).highlanderTournaments[1].brackets[getBracket(team[0])].matches[matchId[1]].scores[team[0]]
+      const idTeam = []
+      idTeam[0] = getId(team[0])
+      idTeam[1] = getId(team[1])
 
-      if (!score && !score2) {
-        return reject ('Those teams didn\'t compete yet. If you want to check the next match, just ask "When is YOUR_TEAM playing?"')
-      } else if (!score) {
-        resolve (score2)
-      } else if (!score2) {
-        resolve (score)
+      var score1 = JSON.parse(res).highlanderTournaments[1].brackets[getBracket(team[0])].matches[matchId[0]].scores[idTeam[0]]
+      var score2 = JSON.parse(res).highlanderTournaments[1].brackets[getBracket(team[0])].matches[matchId[0]].scores[idTeam[1]]
+
+      var score3 = JSON.parse(res).highlanderTournaments[1].brackets[getBracket(team[0])].matches[matchId[1]].scores[idTeam[0]]
+      var score4 = JSON.parse(res).highlanderTournaments[1].brackets[getBracket(team[0])].matches[matchId[1]].scores[idTeam[1]]
+
+      console.log('score 1:  ' + score1);
+      console.log('score 2:  ' + score2);
+      console.log('score 3:  ' + score3)
+      console.log('score 4:  ' + score4);
+      if (score1 === null && score3 === null) {
+        return reject ('Those teams didn\'t compete yet. If you want to check the next match, just ask\n"When is ' + team[0] + ' playing?"\nor\n"When is ' + team[1] + ' playing?"')
+      } else if (!score3 && !score4) {
+        resolve (team[0] + ':  ' + score1 + '  /\/  ' + score2 + '  :' + team[1])
+      } else if(!score1 && !score2) {
+        resolve (team[0] + ':  ' + score3 + '  /\/  ' + score4 + '  :' + team[1])
       } else {
-        resolve (score, score2)
+        resolve (team[0] + ':  ' + score1 + '  /\/  ' + score2 + '  :' + team[1] + '\n\n' + team[0] + ':  ' + score3 + '  /\/  ' + score4 + '  :' + team[1])
       }
     })
   })

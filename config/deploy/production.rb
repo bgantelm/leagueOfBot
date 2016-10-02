@@ -1,5 +1,5 @@
 server 'bots-bots-1', user: 'bots', role: %w(app db web)
-server 'bots-bots-2', user: 'bots', role: %w(app db web)
+#server 'bots-bots-2', user: 'bots', role: %w(app db web)
 
 namespace :deploy do
 
@@ -20,7 +20,7 @@ namespace :deploy do
 	desc 'Restart'
 	task :restart do
 		on roles(:all) do
-			execute "pm2 restart #{fetch :application} || pm2 start #{fetch :deploy_to}/current/lib/server.js -i 0 --name #{fetch :application}"
+			execute "pm2 restart #{fetch :application} || pm2 start #{fetch :deploy_to}/current/lib/bot.js -i 0 --name #{fetch :application}"
 		end
 	end
 
